@@ -5,11 +5,8 @@ import { Product } from '../../product.model';
 import {
   MatDialogRef,
   MAT_DIALOG_DATA,
-  MatDialog
 } from '@angular/material/dialog';
-import { PurchaseDialogComponent } from '../purchase-dialog.component';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { TranscationConfirmationDialogComponent } from '../transcation-confirmation-dialog/transcation-confirmation-dialog.component';
 
 @Component({
   selector: 'app-paypalcomponent',
@@ -122,7 +119,7 @@ export class PaypalcomponentComponent implements OnInit {
   }
 
   initSnackbarConfig = () => {
-    this.snackbarConfig.duration = 3000;
+    this.snackbarConfig.duration = 5000;
     this.snackbarConfig.verticalPosition = 'top';
     this.snackbarConfig.horizontalPosition = 'center';
   }}

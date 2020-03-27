@@ -20,8 +20,14 @@ import { PaypalcomponentComponent } from './products/dialog/paypalcomponent/payp
 import { NgxPayPalModule } from 'ngx-paypal';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
-   TranscationConfirmationDialogComponent
-   } from './products/dialog/transcation-confirmation-dialog/transcation-confirmation-dialog.component';
+  TranscationConfirmationDialogComponent
+} from './products/dialog/transcation-confirmation-dialog/transcation-confirmation-dialog.component';
+import { RouterModule, Routes, Router } from '@angular/router';
+
+const appRoutes: Routes = [
+  // { path: 'purchases', component: TestushComponent },
+  // { path: '**', component: TestushComponent }
+];
 
 @NgModule({
   declarations: [
@@ -33,6 +39,7 @@ import {
     TranscationConfirmationDialogComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
