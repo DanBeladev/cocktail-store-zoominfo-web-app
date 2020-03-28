@@ -1,27 +1,75 @@
-# StoreApp
+# Cocktails Store - Web App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Dan Beladev - danbeladev@gmail.com - *Home Assignment - ZoomInfo*
 
-## Development server
+This app is written in Angular 9 and it simulates a liquor store which you can purchase liquor through your PayPal account using the PayPal sandbox API.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Run the backend from the `cocktail-store-zoominfo-backend` repository:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm install
+npm start
+```
 
-## Running unit tests
+The server should now run locally on port 3000.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Now, go to the web-app repository  `cocktail-store-zoominfo-web-app`:
 
-## Further help
+```
+npm install
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The web application should now run locally on port 4200.
+
+You can access it from the browser via: `http://localhost:4200`
+
+
+
+### API Endpoints
+
+I created some endpoints some are used for the web-app usage and some for better debugging
+
+
+
+Getting purchases object list you can use this endpoint by GET method.
+Creating a new purchase, this endpoint can be used by using a POST request when the purchase object is sent into the request body
+Getting purchases object list you can use this endpoint by DELETE method.
+
+```
+/purchases
+```
+
+Getting products object list you can use this endpoint by GET method.
+
+```
+/products
+```
+
+### PayPal Credentials
+
+To use a dummy user to experience using PayPal sandbox API I created a dummy account and its details are:
+Email: sb-m47i0431250429@personal.example.com
+Password: ] F-P1M / b
+
+If the purchase is successful, a snackbar will show and notify about it and the purchase dialog window will close.
+The same behave for the purchase failed.
+
+
+
+## Extras
+
+- I wanted to fetch the products list from 3rd party API and I found this free one: [Free Cocktails API]('https://www.thecocktaildb.com') and I made a wrapper call that fetch it X time and aggregates the results. The server saves the data once on its uploading phase and since then every request for data will be answered by it without contacting a 3rd party API.
+- I uploaded the backend to heroku in order to publish it and access globally:[heroku-coctail-store-backend]('https://cocktail-store-backend.herokuapp.com')
+- I also tried to upload the client-side code and build it on heroku but faced some problems (thought about uploading the build artifacts to AWS S3 but could not get to this)
+- I added another feature - an Orders page showing all orders placed on the cocktails store website.
+You can reach this screen by clicking on the "My Orders" button on the navigation bar
+

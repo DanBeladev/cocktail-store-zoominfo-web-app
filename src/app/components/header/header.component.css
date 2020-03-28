@@ -2,6 +2,10 @@
   flex: 1 1 auto;
 }
 
+.store-name {
+  display: contents;
+}
+
 .mat-toolbar-row, .mat-toolbar-single-row {
   white-space:normal;
 }

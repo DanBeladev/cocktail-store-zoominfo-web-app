@@ -13,6 +13,7 @@ export class ProductService {
   public ELEMENT_DATA: PurchaseDisplay[] = [];
 
   getProducts() {
+    this.products = [];
     this.http
       .get<Product[]>(`${environment.API_URL}/products`, {
         responseType: 'json'
@@ -23,21 +24,32 @@ export class ProductService {
   }
 
   getPurchases() {
-    this.http
-      .get<Purchase[]>(`${environment.API_URL}/purchases`, {
-        responseType: 'json'
-      })
-      .subscribe(ApiPurchases => {
-        this.purchases = ApiPurchases;
-        console.log('in service- this.purchases = ', this.purchases);
-      });
+    const promise = new Promise((resolve, reject) => {
+      this.http
+        .get<Purchase[]>(`${environment.API_URL}/purchases`, {
+          responseType: 'json'
+        })
+        .toPromise()
+        .then(
+          res => {
+            this.purchases = res;
+            this.getProccessesPurchases();
+            resolve();
+          },
+          msg => {
+            console.log('message: ', msg);
+            reject();
+          }
+        );
+    });
+    return promise;
   }
 
   getProccessesPurchases() {
     this.ELEMENT_DATA = [];
-    this.purchases.forEach(fullPurchase => {
+    Array.prototype.forEach.call(this.purchases, fullPurchase => {
       const obj: PurchaseDisplay = {
-        OrderID: fullPurchase._id,
+        Order: fullPurchase._id,
         Cocktail: fullPurchase.product.title,
         Date: formatDate(fullPurchase.createdDate, 'yyyy/MM/dd', 'en'),
         BuyerName: fullPurchase.user.name,

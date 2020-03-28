@@ -23,7 +23,7 @@ export interface Purchase {
 }
 
 export interface PurchaseDisplay {
-  OrderID: string;
+  Order: string;
   Cocktail: string;
   Date: string;
   BuyerName: string;

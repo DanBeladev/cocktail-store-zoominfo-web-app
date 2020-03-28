@@ -106,7 +106,6 @@ export class PaypalcomponentComponent implements OnInit {
   }
 
   handleNotCompletedTeansaction(): void {
-    this.paypalService.onTransactionCancelled();
     this.dialogRef.close();
     this.snackbarConfig.panelClass = ['cancell-class'];
     this.snackBar.open(

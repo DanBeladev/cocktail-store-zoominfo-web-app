@@ -25,19 +25,15 @@ import {
   ]
 })
 export class PurchasesComponent implements OnInit {
-  public purchases: Purchase[] = this.productsService.purchases;
+  public purchases: Purchase[] = [];
   dataSource;
-  columnsToDisplay = [
-    'OrderID',
-    'Date',
-  ];
+  columnsToDisplay = ['Order', 'Date'];
   expandedElement: Purchase | null;
   constructor(private productsService: ProductService) {}
 
   ngOnInit(): void {
-    console.log('in ng init - my purchases', this.purchases);
-    this.productsService.getPurchases();
-    this.productsService.getProccessesPurchases();
-    this.dataSource = this.productsService.ELEMENT_DATA;
+    this.productsService.getPurchases().then(() => {
+      this.dataSource = this.productsService.ELEMENT_DATA;
+    });
   }
 }

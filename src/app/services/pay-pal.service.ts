@@ -9,13 +9,13 @@ import { environment } from '../../environments/environment';
 })
 export class PayPalService {
   public product: Product;
-  public isTransactionCompleted = false;
 
   constructor(public http: HttpClient) {}
 
   transactionCompleted = data => {
     const { payer } = data;
-    const shipping = data.purchase_units[0].shipping;
+    const { purchase_units = []} = data || {};
+    const shipping = (purchase_units[0] || {}).shipping;
     const payerAddress = `${shipping.address.address_line_1} ${shipping.address.address_line_2}
       ${shipping.address.address_line_3} ${shipping.address.country_code}`;
 
@@ -39,13 +39,8 @@ export class PayPalService {
     this.http
       .post<Purchase>(environment.API_URL + '/purchases', purchase)
       .subscribe(purchases => {
-        console.log('purchases after post request: ' + purchases._id);
+        console.log('purchases after post request: ', purchases);
       });
 
-    this.isTransactionCompleted = true;
-  }
-
-  onTransactionCancelled = () => {
-    this.isTransactionCompleted = false;
   }
 }

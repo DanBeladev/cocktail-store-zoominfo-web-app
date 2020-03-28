@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/services/products.service';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = this.productService.products;
+  products: Product[] = [];
 
   constructor(
     public paypalService: PayPalService,
@@ -24,13 +24,10 @@ export class ProductListComponent implements OnInit {
     const dialogRef = this.dialog.open(PaypalcomponentComponent, {
       data: product
     });
-
-    dialogRef.afterClosed().subscribe(resulet => {
-      console.log('The dialog wsa closed');
-    });
   }
 
   ngOnInit() {
     this.productService.getProducts();
+    this.products = this.productService.products;
   }
 }
