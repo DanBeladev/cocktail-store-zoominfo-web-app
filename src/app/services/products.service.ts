@@ -37,8 +37,7 @@ export class ProductService {
             resolve();
           },
           msg => {
-            console.log('message: ', msg);
-            reject();
+            reject(msg);
           }
         );
     });

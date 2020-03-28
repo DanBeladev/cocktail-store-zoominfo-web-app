@@ -77,7 +77,6 @@ export class PaypalcomponentComponent implements OnInit {
         });
       },
       onClientAuthorization: data => {
-        console.log(data);
         this.paypalService.transactionCompleted(data);
         this.dialogRef.close();
         this.snackbarConfig.panelClass = ['confirm-class'];
