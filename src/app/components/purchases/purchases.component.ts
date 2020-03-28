@@ -39,6 +39,7 @@ export class PurchasesComponent implements OnInit {
   constructor(private productsService: ProductService) {}
 
   ngOnInit(): void {
+    console.log('in ng init - my purchases', this.purchases);
     this.productsService.getPurchases();
     this.productsService.getProccessesPurchases();
     this.dataSource = this.productsService.ELEMENT_DATA;

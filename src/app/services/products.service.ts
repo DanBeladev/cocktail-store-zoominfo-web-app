@@ -2,6 +2,7 @@ import { Product, Purchase, PurchaseDisplay } from 'src/app/api/models/types';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { formatDate } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
@@ -27,21 +28,25 @@ export class ProductService {
         responseType: 'json'
       })
       .subscribe(ApiPurchases => {
-        ApiPurchases.forEach(purchase => this.purchases.push(purchase));
+        this.purchases = ApiPurchases;
+        console.log('in service- this.purchases = ', this.purchases);
       });
   }
 
   getProccessesPurchases() {
+    this.ELEMENT_DATA = [];
     this.purchases.forEach(fullPurchase => {
       const obj: PurchaseDisplay = {
         OrderID: fullPurchase._id,
         Cocktail: fullPurchase.product.title,
-        Date: fullPurchase.createdDate,
+        Date: formatDate(fullPurchase.createdDate, 'yyyy/MM/dd', 'en'),
+        // Date: fullPurchase.createdDate.getUTCDate(),
         BuyerName: fullPurchase.user.name,
         Email: fullPurchase.user.emailAddress,
         Phone: fullPurchase.user.phoneNumber,
         Description: fullPurchase.product.description,
-        ImgUrl: fullPurchase.product.picture
+        ImgUrl: fullPurchase.product.picture,
+        Price: fullPurchase.product.price
       };
       this.ELEMENT_DATA.push(obj);
     });

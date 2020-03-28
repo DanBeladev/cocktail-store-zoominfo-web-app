@@ -25,8 +25,9 @@ export interface Purchase {
 export interface PurchaseDisplay {
   OrderID: string;
   Cocktail: string;
-  Date: Date;
+  Date: string;
   BuyerName: string;
+  Price: string;
   Email: string;
   Phone: string;
   ImgUrl: string;
