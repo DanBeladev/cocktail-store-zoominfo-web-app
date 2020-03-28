@@ -64,6 +64,9 @@ Email: sb-m47i0431250429@personal.example.com
 
 Password: ] F-P1M / b
 
+Each product has a purchase button that takes you to the Paypal Transaction screen and gives you details about the order placed.
+This information after purchase is transferred to the server and stored there in memory.
+After successfully purchasing a cocktail, you can go to the orders screen and view the purchased order and the other orders purchased so far.
 If the purchase is successful, a snackbar will show and notify about it and the purchase dialog window will close.
 The same behave for the purchase failed.
 
