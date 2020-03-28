@@ -1,6 +1,5 @@
-import { Product } from './product.model';
+import { Product, Purchase, PurchaseDisplay } from 'src/app/api/models/types';
 import { Injectable } from '@angular/core';
-import { Subject, Observable, from } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -9,7 +8,8 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   public products: Product[] = [];
-  // private productsUpdated = new Subject<Product[]>();
+  public purchases: Purchase[] = [];
+  public ELEMENT_DATA: PurchaseDisplay[] = [];
 
   getProducts() {
     this.http
@@ -21,7 +21,28 @@ export class ProductService {
       });
   }
 
-  // getproductUpdateListener() {
-  //   return this.productsUpdated.asObservable();
-  // }
+  getPurchases() {
+    this.http.get<Purchase[]>(`${environment.API_URL}/purchases`, {
+      responseType: 'json'
+    })
+    .subscribe(ApiPurchases => {
+      ApiPurchases.forEach(purchase => this.purchases.push(purchase));
+    });
+  }
+
+  getProccessesPurchases() {
+      this.purchases.forEach((fullPurchase) => {
+      const obj: PurchaseDisplay = {
+        orderID: fullPurchase._id,
+        date: fullPurchase.createdDate,
+        cocktail: fullPurchase.product.title,
+        buyerName: fullPurchase.user.name,
+        email: fullPurchase.user.emailAddress,
+        phone: fullPurchase.user.phoneNumber,
+        description: fullPurchase.product.description,
+        imgUrl: fullPurchase.product.picture
+      };
+      this.ELEMENT_DATA.push(obj);
+    });
+  }
 }

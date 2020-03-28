@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, fromEventPattern } from 'rxjs';
-import { Product } from '../product.model';
+import { Product } from 'src/app/api/models/types';
 import { ProductService } from '../products.service';
 import { MatDialog} from '@angular/material/dialog';
-import {PurchaseDialogComponent } from '../dialog/purchase-dialog.component';
 import { PaypalcomponentComponent } from '../dialog/paypalcomponent/paypalcomponent.component';
 import { PayPalService } from '../pay-pal.service';
 
@@ -12,15 +11,13 @@ import { PayPalService } from '../pay-pal.service';
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
-export class ProductListComponent implements OnInit, OnDestroy {
+export class ProductListComponent implements OnInit {
 products: Product[] = this.productService.products;
 private productsSub: Subscription;
 
  constructor(public paypalService: PayPalService, public productService: ProductService, public dialog: MatDialog) {}
 
 openBuyDialog(product) {
-  // this.dialog.open(PurchaseDialogComponent);
-  // this.payPalSercice.getProduct(product);
   this.paypalService.product = product;
   const dialogRef = this.dialog.open(PaypalcomponentComponent, {
     data: product
@@ -34,9 +31,5 @@ openBuyDialog(product) {
 
  ngOnInit() {
    this.productService.getProducts();
- }
-
- ngOnDestroy() {
-   this.productsSub.unsubscribe();
  }
 }

@@ -36,6 +36,9 @@
 
 @media screen and (max-height:570px)
 {
+  .checkout {
+    margin-bottom: 0;
+  }
   .description {
     height: 18px;
     white-space: nowrap;

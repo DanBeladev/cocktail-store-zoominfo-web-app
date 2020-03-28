@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product.model';
-import { User, Purchase } from '../api/models/purchase';
+import { Product } from 'src/app/api/models/types';
+import { User, Purchase } from '../api/models/types';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 

@@ -3,6 +3,7 @@ body {
   padding: 0;
 
 }
+
 :host {
   display: block;
   margin-top: 1rem;

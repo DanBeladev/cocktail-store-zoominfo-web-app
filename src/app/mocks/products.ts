@@ -1,4 +1,4 @@
-import {Product} from '../products/product.model';
+import { Product } from 'src/app/api/models/types';
 
 
 export const productsList: Product[] = [

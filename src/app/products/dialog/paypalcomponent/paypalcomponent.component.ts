@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { PayPalService } from '../../pay-pal.service';
-import { Product } from '../../product.model';
+import { Product } from 'src/app/api/models/types';
+
 import {
   MatDialogRef,
   MAT_DIALOG_DATA,

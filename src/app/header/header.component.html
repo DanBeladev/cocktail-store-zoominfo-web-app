@@ -1,10 +1,6 @@
-<mat-toolbar class="header" color="primary">
-  <!-- <a href={{homeUrl}}>HOME</a>
-  <a href={{purchasesUrl}}>MyOrders</a> -->
-<!-- <nav>
-  <a routerLink=" " routerLinkActive="active">HOME</a>
-  <a routerLink="/purchases" routerLinkActive="active">Orders</a>
-</nav>
-<router-outlet></router-outlet> -->
-  <div class="div">Dan Beladev - Cocktails Store</div>
-  </mat-toolbar>
+<mat-toolbar class="mat-elevation-z8" color="primary">
+<span> Dan Beladev - Cocktails Store <mat-icon>local_bar</mat-icon></span>
+<div class="spacer"></div>
+<a mat-button routerLink = "myOrders">My Orders</a>
+<a mat-button routerLink = "home">Home</a>
+ </mat-toolbar>

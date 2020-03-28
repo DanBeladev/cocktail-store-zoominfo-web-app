@@ -8,11 +8,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './products/products-list/products-list.component';
-import { PurchaseDialogComponent } from './products/dialog/purchase-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -22,24 +22,19 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
   TranscationConfirmationDialogComponent
 } from './products/dialog/transcation-confirmation-dialog/transcation-confirmation-dialog.component';
-import { RouterModule, Routes, Router } from '@angular/router';
-
-const appRoutes: Routes = [
-  // { path: 'purchases', component: TestushComponent },
-  // { path: '**', component: TestushComponent }
-];
+import { PurchasesComponent } from './purchases/purchases.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductListComponent,
-    PurchaseDialogComponent,
     PaypalcomponentComponent,
-    TranscationConfirmationDialogComponent
+    TranscationConfirmationDialogComponent,
+    PurchasesComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes, {enableTracing: true}),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -54,7 +49,9 @@ const appRoutes: Routes = [
     MatInputModule,
     MatProgressSpinnerModule,
     NgxPayPalModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
