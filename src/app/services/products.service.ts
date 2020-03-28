@@ -22,16 +22,17 @@ export class ProductService {
   }
 
   getPurchases() {
-    this.http.get<Purchase[]>(`${environment.API_URL}/purchases`, {
-      responseType: 'json'
-    })
-    .subscribe(ApiPurchases => {
-      ApiPurchases.forEach(purchase => this.purchases.push(purchase));
-    });
+    this.http
+      .get<Purchase[]>(`${environment.API_URL}/purchases`, {
+        responseType: 'json'
+      })
+      .subscribe(ApiPurchases => {
+        ApiPurchases.forEach(purchase => this.purchases.push(purchase));
+      });
   }
 
   getProccessesPurchases() {
-      this.purchases.forEach((fullPurchase) => {
+    this.purchases.forEach(fullPurchase => {
       const obj: PurchaseDisplay = {
         OrderID: fullPurchase._id,
         Cocktail: fullPurchase.product.title,

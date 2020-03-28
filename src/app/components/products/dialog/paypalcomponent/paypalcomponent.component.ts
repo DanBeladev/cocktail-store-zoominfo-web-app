@@ -2,10 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { Product } from 'src/app/api/models/types';
 
-import {
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { PayPalService } from 'src/app/services/pay-pal.service';
 
@@ -123,4 +120,5 @@ export class PaypalcomponentComponent implements OnInit {
     this.snackbarConfig.duration = 5000;
     this.snackbarConfig.verticalPosition = 'top';
     this.snackbarConfig.horizontalPosition = 'center';
-  }}
+  }
+}
