@@ -1,4 +1,4 @@
-# Cocktails Store - Web App
+# Cocktails Store - Backend
 
 Dan Beladev - danbeladev@gmail.com - *Home Assignment - ZoomInfo*
 
@@ -40,15 +40,17 @@ I created some endpoints some are used for the web-app usage and some for better
 
 
 
-Getting purchases object list you can use this endpoint by GET method.
-Creating a new purchase, this endpoint can be used by using a POST request when the purchase object is sent into the request body
-Getting purchases object list you can use this endpoint by DELETE method.
+GET - getting purchases object list.
+
+POST - create a new purchase, the purchase object is sent into the request body.
+
+Delete - delete purchases object list. (only for debbuging)
 
 ```
 /purchases
 ```
 
-Getting products object list you can use this endpoint by GET method.
+GET - getting products object list.
 
 ```
 /products
@@ -57,7 +59,9 @@ Getting products object list you can use this endpoint by GET method.
 ### PayPal Credentials
 
 To use a dummy user to experience using PayPal sandbox API I created a dummy account and its details are:
+
 Email: sb-m47i0431250429@personal.example.com
+
 Password: ] F-P1M / b
 
 If the purchase is successful, a snackbar will show and notify about it and the purchase dialog window will close.
@@ -67,9 +71,11 @@ The same behave for the purchase failed.
 
 ## Extras
 
-- I wanted to fetch the products list from 3rd party API and I found this free one: [Free Cocktails API]('https://www.thecocktaildb.com') and I made a wrapper call that fetch it X time and aggregates the results. The server saves the data once on its uploading phase and since then every request for data will be answered by it without contacting a 3rd party API.
-- I uploaded the backend to heroku in order to publish it and access globally:[heroku-coctail-store-backend]('https://cocktail-store-backend.herokuapp.com')
+- I wanted to fetch the products list from 3rd party API and I found this free one:
+Free Cocktails API - 'https://www.thecocktaildb.com' and I made a wrapper call that fetch it X time and aggregates the results. The server saves the data once on its uploading phase and since then every request for data will be answered by it without contacting a 3rd party API.
+- I uploaded the backend to heroku in order to publish it and access globally:
+heroku-coctail-store-backend - 'https://cocktail-store-backend.herokuapp.com'.
 - I also tried to upload the client-side code and build it on heroku but faced some problems (thought about uploading the build artifacts to AWS S3 but could not get to this)
-- I added another feature - an Orders page showing all orders placed on the cocktails store website.
-You can reach this screen by clicking on the "My Orders" button on the navigation bar
+- I added another feature - *My Orders* page showing all orders placed on the cocktails store website.
+You can reach this screen by clicking on the *"My Orders"* button on the navigation bar
 
