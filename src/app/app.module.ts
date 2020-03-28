@@ -11,18 +11,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ProductListComponent } from './products/products-list/products-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ProductListComponent } from './components/products/products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { PaypalcomponentComponent } from './products/dialog/paypalcomponent/paypalcomponent.component';
+import { PaypalcomponentComponent } from './components/products/dialog/paypalcomponent/paypalcomponent.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {
-  TranscationConfirmationDialogComponent
-} from './products/dialog/transcation-confirmation-dialog/transcation-confirmation-dialog.component';
-import { PurchasesComponent } from './purchases/purchases.component';
+import { PurchasesComponent } from './components/purchases/purchases.component';
 import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
@@ -31,7 +28,6 @@ import {MatTableModule} from '@angular/material/table';
     HeaderComponent,
     ProductListComponent,
     PaypalcomponentComponent,
-    TranscationConfirmationDialogComponent,
     PurchasesComponent
   ],
   imports: [

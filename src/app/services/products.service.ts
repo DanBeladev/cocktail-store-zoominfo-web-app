@@ -33,14 +33,14 @@ export class ProductService {
   getProccessesPurchases() {
       this.purchases.forEach((fullPurchase) => {
       const obj: PurchaseDisplay = {
-        orderID: fullPurchase._id,
-        date: fullPurchase.createdDate,
-        cocktail: fullPurchase.product.title,
-        buyerName: fullPurchase.user.name,
-        email: fullPurchase.user.emailAddress,
-        phone: fullPurchase.user.phoneNumber,
-        description: fullPurchase.product.description,
-        imgUrl: fullPurchase.product.picture
+        OrderID: fullPurchase._id,
+        Cocktail: fullPurchase.product.title,
+        Date: fullPurchase.createdDate,
+        BuyerName: fullPurchase.user.name,
+        Email: fullPurchase.user.emailAddress,
+        Phone: fullPurchase.user.phoneNumber,
+        Description: fullPurchase.product.description,
+        ImgUrl: fullPurchase.product.picture
       };
       this.ELEMENT_DATA.push(obj);
     });

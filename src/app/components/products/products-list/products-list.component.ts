@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription, fromEventPattern } from 'rxjs';
 import { Product } from 'src/app/api/models/types';
-import { ProductService } from '../products.service';
 import { MatDialog} from '@angular/material/dialog';
 import { PaypalcomponentComponent } from '../dialog/paypalcomponent/paypalcomponent.component';
-import { PayPalService } from '../pay-pal.service';
+import { PayPalService } from 'src/app/services/pay-pal.service';
+import { ProductService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +12,6 @@ import { PayPalService } from '../pay-pal.service';
 })
 export class ProductListComponent implements OnInit {
 products: Product[] = this.productService.products;
-private productsSub: Subscription;
 
  constructor(public paypalService: PayPalService, public productService: ProductService, public dialog: MatDialog) {}
 

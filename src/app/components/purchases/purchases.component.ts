@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../products/products.service';
-import { Purchase, PurchaseDisplay } from '../api/models/types';
+import { ProductService } from '../../services/products.service';
+import { Purchase } from '../../api/models/types';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -17,14 +17,15 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class PurchasesComponent implements OnInit {
   public purchases: Purchase[] = this.productsService.purchases;
-  dataSource = this.purchases;
-  columnsToDisplay = ['OrderID', 'Cocktail', 'Date', 'Buyer', 'Email', 'Phone'];
+  dataSource;
+  columnsToDisplay = ['OrderID', 'Cocktail', 'Date', 'BuyerName', 'Email', 'Phone'];
   expandedElement: Purchase | null;
   constructor(private productsService: ProductService) { }
 
   ngOnInit(): void {
     this.productsService.getPurchases();
     this.productsService.getProccessesPurchases();
+    this.dataSource = this.productsService.ELEMENT_DATA;
   }
 
 }

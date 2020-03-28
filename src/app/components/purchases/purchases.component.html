@@ -11,16 +11,16 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
       <div class="example-element-detail"
            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-          <img src="{{element.imgUrl}}">
-           <div class="example-element-diagram">
+          <img class ="drinkImg" src="{{element.ImgUrl}}">
+           <!-- <div class="example-element-diagram">
           <div class="example-element-position"> {{element._id}} </div>
           <div class="example-element-symbol"> {{element.createdDate}} </div>
           <div class="example-element-name"> {{element.product.title}} </div>
           <div class="example-element-weight"> {{element.product.price}} </div>
-        </div>
+        </div> -->
         <div class="example-element-description">
-          {{element.product.description}}
-          <span class="example-element-description-attribution"> -- Wikipedia </span>
+          {{element.Description}}
+          <span class="example-element-description-attribution"></span>
         </div>
       </div>
     </td>

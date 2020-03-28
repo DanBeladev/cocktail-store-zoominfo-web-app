@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
-import { PayPalService } from '../../pay-pal.service';
 import { Product } from 'src/app/api/models/types';
 
 import {
@@ -8,6 +7,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { PayPalService } from 'src/app/services/pay-pal.service';
 
 @Component({
   selector: 'app-paypalcomponent',

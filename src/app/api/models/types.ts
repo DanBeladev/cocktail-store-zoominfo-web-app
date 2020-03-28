@@ -23,12 +23,12 @@ export interface Purchase {
 }
 
 export interface PurchaseDisplay {
-  orderID: string;
-  cocktail: string;
-  date: Date;
-  buyerName: string;
-  email: string;
-  phone: string;
-  imgUrl: string;
-  description: string;
+  OrderID: string;
+  Cocktail: string;
+  Date: Date;
+  BuyerName: string;
+  Email: string;
+  Phone: string;
+  ImgUrl: string;
+  Description: string;
 }
