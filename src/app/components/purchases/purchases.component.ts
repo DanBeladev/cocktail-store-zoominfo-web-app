@@ -29,11 +29,7 @@ export class PurchasesComponent implements OnInit {
   dataSource;
   columnsToDisplay = [
     'OrderID',
-    'Cocktail',
     'Date',
-    'BuyerName',
-    'Email',
-    'Phone'
   ];
   expandedElement: Purchase | null;
   constructor(private productsService: ProductService) {}

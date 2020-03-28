@@ -2,28 +2,52 @@ table {
   width: 100%;
 }
 
-tr.example-detail-row {
+tr.detail-row {
   height: 0;
+  background-color: #f7f7f7;
 }
 
-tr.example-element-row:not(.example-expanded-row):hover {
+tr.element-row:not(.expanded-row):hover {
   background: whitesmoke;
 }
 
-tr.example-element-row:not(.example-expanded-row):active {
+tr.element-row:not(.expanded-row):active {
   background: #efefef;
 }
 
-.example-element-row td {
+.element-row td {
   border-bottom-width: 0;
 }
 
-.example-element-detail {
+.cocktail {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.description {
+  font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.user-details {
+  opacity: 0.5;
+  font-size: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.buyer-name {
+  font-size: 17px;
+}
+.element-detail {
   overflow: hidden;
   display: flex;
 }
 
-.example-element-diagram {
+.element-diagram {
   min-width: 80px;
   border: 2px solid black;
   padding: 8px;
@@ -38,16 +62,22 @@ tr.example-element-row:not(.example-expanded-row):active {
   margin-bottom: 17px;
 }
 
-.example-element-symbol {
+.element-symbol {
   font-weight: bold;
   font-size: 40px;
   line-height: normal;
 }
 
-.example-element-description {
+.element-description {
   padding: 16px;
 }
 
-.example-element-description-attribution {
+.element-description-attribution {
+  font-size: 24px;
   opacity: 0.5;
+  display: contents;
+}
+
+.mat-header-cell {
+  font-size: 15px;
 }

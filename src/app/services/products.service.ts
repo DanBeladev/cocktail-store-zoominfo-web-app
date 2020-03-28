@@ -40,7 +40,6 @@ export class ProductService {
         OrderID: fullPurchase._id,
         Cocktail: fullPurchase.product.title,
         Date: formatDate(fullPurchase.createdDate, 'yyyy/MM/dd', 'en'),
-        // Date: fullPurchase.createdDate.getUTCDate(),
         BuyerName: fullPurchase.user.name,
         Email: fullPurchase.user.emailAddress,
         Phone: fullPurchase.user.phoneNumber,
