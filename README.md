@@ -2,7 +2,7 @@
 
 Dan Beladev - danbeladev@gmail.com - *Home Assignment - ZoomInfo*
 
-This app is written in Angular 9 and it simulates a liquor store which you can purchase liquor through your PayPal account using the PayPal sandbox API.
+This app is written in Angular 9 & NodeJS and it simulates a liquor store which you can purchase liquor through your PayPal account using the PayPal sandbox API.
 
 ## Getting Started
 
