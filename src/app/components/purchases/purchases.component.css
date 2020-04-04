@@ -81,3 +81,10 @@ tr.element-row:not(.expanded-row):active {
 .mat-header-cell {
   font-size: 15px;
 }
+
+
+@media screen and (max-width: 500px) {
+  body {
+      overflow-x: hidden !important;
+  }
+}

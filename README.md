@@ -78,7 +78,8 @@ The same behave for the purchase failed.
 Free Cocktails API - 'https://www.thecocktaildb.com' and I made a wrapper call that fetch it X time and aggregates the results. The server saves the data once on its uploading phase and since then every request for data will be answered by it without contacting a 3rd party API.
 - I uploaded the backend to heroku in order to publish it and access globally:
 heroku-coctail-store-backend - 'https://cocktail-store-backend.herokuapp.com'.
-- I also tried to upload the client-side code and build it on heroku but faced some problems (thought about uploading the build artifacts to AWS S3 but could not get to this)
+- I also tried to upload the client-side code and build it on heroku but faced some problems 
+instead i uploaded the client side to AWS S3 and everyone can access globally: 'http://cocktails-store.s3-website.eu-central-1.amazonaws.com'.
 - I added another feature - *My Orders* page showing all orders placed on the cocktails store website.
 You can reach this screen by clicking on the *"My Orders"* button on the navigation bar
 
