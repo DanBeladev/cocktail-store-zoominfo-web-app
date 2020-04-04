@@ -79,7 +79,7 @@ Free Cocktails API - 'https://www.thecocktaildb.com' and I made a wrapper call t
 - I uploaded the backend to heroku in order to publish it and access globally:
 heroku-coctail-store-backend - 'https://cocktail-store-backend.herokuapp.com'.
 - I also tried to upload the client-side code and build it on heroku but faced some problems 
-instead i uploaded the client side to AWS S3 and everyone can access globally: 'http://cocktails-store.s3-website.eu-central-1.amazonaws.com'.
+instead i uploaded the client side to AWS S3 and everyone can access globally: 'http://cocktails-store-app.s3-website.eu-central-1.amazonaws.com/'.
 - I added another feature - *My Orders* page showing all orders placed on the cocktails store website.
 You can reach this screen by clicking on the *"My Orders"* button on the navigation bar
 
