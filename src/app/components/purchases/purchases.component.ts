@@ -32,6 +32,7 @@ export class PurchasesComponent implements OnInit {
   constructor(private productsService: ProductService) {}
 
   ngOnInit(): void {
+    console.log('purchases page');
     this.productsService.getPurchases().then(() => {
       this.dataSource = this.productsService.ELEMENT_DATA;
     });
